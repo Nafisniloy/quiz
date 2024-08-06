@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <span id="loader" class="loader"></span>
+        <div id="signup" class="signup">
+            <h1>My Quiz</h1>
+            <div class="inputContainer">
+                 <i class="fa fa-user"></i>
+            <input placeholder="Username" id="userInput" type="text">
+            <button class="submitBtn" onclick="signup()">Submit</button>
+            </div>
+           
+        </div> 
+         <div id="header" class="header">
+            <h4 id="username"></h4>
+            <h4 id="accuracy"></h4>
+        </div>
+        <div id="home" class="home">
+         
+           <div class="selector">
+            <h4>Start new quiz</h4>
+            <select id="amount" name="amount" class="form-control">
+                <option value="5">5 Questions</option> 
+                <option value="10">10 Questions</option> 
+                <option value="15">15 Questions</option> 
+                <option value="20">20 Questions</option>
+            </select>
+    
+            <select id="category" name="category" class="form-control">
+                <option value="">Any Category</option> 
+                <option value="9">General Knowledge</option>
+
+                <option value="10">Entertainment: Books</option>
+
+                <option value="11">Entertainment: Film</option>
+
+                <option value="12">Entertainment: Music</option>
+
+                <option value="13">Entertainment: Musical
+                    s &amp; Theatres</option> 
+                <option value="14">Entertainment: Televis
+                    ion</option> 
+                <option value="15">Entertainment: Video Games</option> 
+                <option value="16">Entertainment: Board Games</option> 
+                <option value="17">Science &amp; Nature</option>
+
+                <option value="18">Science: Computers</option>
+
+                <option value="19">Science: Mathematics</option>
+
+                <option
+                 value="20">Mythology</option> 
+                <option
+                 value="21">Sports</option> 
+                <option
+                 value="22">Geography</option> 
+                <option
+                 value="23">History</option> 
+                <option
+                 value="24">Politics</option> 
+                <option
+                 value="25">Art</option> 
+                <option
+                 value="26">Celebrities</option> 
+                <option
+                 value="27">Animals</option> 
+                <option
+                 value="28">Vehicles</option> 
+                <option value="29">Entertainment: Comics</option>
+
+                <option value="30">Science: Gadgets</option>
+
+                <option value="31">Entertainment: Japanes
+                    e Anime &amp; Manga</option> 
+                <option value="32">Entertainment: Cartoon &amp; Animations</option> 
+		    </select>
+            <select id="difficulty" name="difficulty" class="form-control">
+                <option value="">Any Difficulty</option> 
+                <option value="easy">Easy</option> 
+                <option value="medium">Medium</option> 
+                <option value="hard">Hard</option> 
+            </select>
+        </div>
+        <div class="btns">
+            <button class="submitBtn" onclick="startQuiz()">Start Quiz</button>
+            <button class="resetBtn" onclick="resetHistory()">Reset</button>
+
+        </div>
+        </div>
+        <div id="questions" class="questions">
+        
+            <div class="question">
+                <h2 id="question"></h2>
+            </div>
+            <div class="answers">
+                <button class="answer" onclick="answer(this)"></button>
+                <button class="answer" onclick="answer(this)"></button>
+                <button class="answer" onclick="answer(this)"></button>
+                <button class="answer" onclick="answer(this)"></button>
+            </div>
+            <div class="btns">
+                <button id="skip" class="skipBtn" onclick="skip()">Skip</button>
+                <button id="next" class="submitBtn" onclick="next()">Next</button>
+                <button id="finish" class="finishBtn" onclick="finish()">Finish</button>
+            </div>
+        </div>
+          
+    </div>       
+    
+    <script src="script.js"></script>
+</body>
+</html>
