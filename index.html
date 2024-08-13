@@ -6,10 +6,20 @@
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="images/icon-192x192.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+    
+    <link rel="manifest" href="manifest.json">
+    
 </head>
 <body>
     <div class="container">
         <span id="loader" class="loader"></span>
+        <div id="offline">
+            <i class="fa-solid fa-wifi"></i>
+            <h3>You are offline</h3>
+            <a href="/">Return Home</a>
+        </div>
         <div id="signup" class="signup">
             <h1>My Quiz</h1>
             <div class="inputContainer">
@@ -115,6 +125,7 @@
           
     </div>       
     
+    <script src="app.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

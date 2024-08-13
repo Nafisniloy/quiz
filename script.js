@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
     var username = localStorage.getItem('username');
     if (username) {
@@ -56,9 +58,15 @@ function startQuiz(){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://opentdb.com/api.php?amount='+amount+'&category='+category+'&difficulty='+difficulty+'&type=multiple', true);
     xhr.send();
+    xhr.onerror = function() {
+        // show you are offline using ui
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('offline').style.display = 'flex';
+    }
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
+   
             var questions = response.results;
             localStorage.setItem('questions', JSON.stringify(questions));            
             showquestion();
@@ -67,13 +75,23 @@ function startQuiz(){
             document.getElementById('header').style.display = 'flex';
         }
     }
+
 }
 
 function showquestion(){
-    
+  
     localStorage.setItem('currentQuestion', parseInt(localStorage.getItem('currentQuestion'))+1);
     showAccuracy(localStorage.getItem('currentAnsweredQuestions'), localStorage.getItem('currentCorrectAnswers'));
     var questions = JSON.parse(localStorage.getItem('questions'));
+    if(questions.length==0){
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('offline').style.display = 'flex';
+            document.getElementById('questions').style.display = 'none';
+            document.getElementById('header').style.display = 'none';
+            document.getElementById(answer).style.display = 'none';
+            document.getElementById('buttons').style.display = 'none';
+            return;
+        }
     var question = questions.shift();
 
     localStorage.setItem('questions', JSON.stringify(questions));

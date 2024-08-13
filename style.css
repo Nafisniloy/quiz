@@ -212,3 +212,54 @@ body{
     #next{
         display: none;
     }
+
+
+    
+    #offline {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Adjust as needed */
+        text-align: center;
+        padding: 20px;
+        background-color: #ffffff; /* Optional: change background color */
+    }
+    
+    #offline i {
+        position: relative;
+        font-size: 48px; /* Adjust size as needed */
+        color: #333; /* Icon color */
+        margin-bottom: 10px;
+    }
+    
+    #offline i::after {
+        content: '';
+        position: absolute;
+        top: 44%;
+        left: -3px;
+        width: 100%;
+        height: 2px;
+        background-color: red;
+        transform: rotate(45deg) translateY(-50%);
+        transform-origin: center;
+    }
+    
+    #offline h3 {
+        margin: 10px 0;
+        color: #555; /* Text color */
+    }
+    
+    #offline a {
+        color: #ffffff; 
+        text-decoration: none;
+        background-color: #454545;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+    
+    #offline a:hover {
+        text-decoration: underline;
+    }
+    
